@@ -1,0 +1,10 @@
+body {
+  background-color: gainsboro;
+}
+.form,
+.greetings {
+  display: none;
+}
+.showing {
+  display: block;
+}

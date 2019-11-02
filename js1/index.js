@@ -12,7 +12,7 @@ console.log(b);
 const what = "Nicolas";
 const watt = true;
 const watf = false;
-const dayOfWeek = ["Mon", "Tue", "Wed", true]; // 낙타등 명명 규칙 - 띄어쓰기 대신에 대문자를 써준다.
+const dayOfWeek = ["Mon", "Tue", "Wed", true, 1, 20.3]; // 낙타등 명명 규칙 - 띄어쓰기 대신에 대문자를 써준다.
 console.log(dayOfWeek);
 
 //make object
@@ -25,6 +25,6 @@ const nicoInfo = {
   favFood: [{ name: "Kimchi", fatty: false }, { name: "Lynn", fatty: false }]
 };
 console.log(nicoInfo);
-//nicoInfo자체를 바꿀수는없지만, 변수값은 변경가능.
+// const nicoInfo : nicoInfo자체를 바꿀수는없지만, 변수값은 변경가능.
 
 //make object to array
