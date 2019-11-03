@@ -88,7 +88,7 @@ body {
   margin: 15px;
   padding: 10px 20px;
 }
-.toDoList .toDoList__form .js-toDoForm > input {
+input {
   height: 30px;
   padding: 0 30px;
   background: none;

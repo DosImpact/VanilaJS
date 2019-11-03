@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const IMG_NUMBER = 5;
+const IMG_NUMBER = 9;
 
 //이미지 API에서 불러온다면, 이 기능이 필요할거다.
 function handleImgLoad() {
