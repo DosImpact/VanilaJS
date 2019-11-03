@@ -12,6 +12,7 @@ function sayhello2(arg1, arg2) {
 sayhello("Mon", "father");
 sayhello2("sister", "brother");
 // js에 문자열은 "" '' `` 3개로 가능하다.
+//` 은 backtick이라고 부른다.
 
 // 함수는 객체의 맴버로 들어갈수있다.
 
@@ -37,5 +38,6 @@ const title = document.getElementById("title");
 console.log(title.innerText);
 console.dir(title);
 title.style.color = "red";
+//왠만해서는 쿼리스트링을 쓰는게 간편함.~
 const title2 = document.querySelector("#title");
 title2.innerText = "Wokring~";

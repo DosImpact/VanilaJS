@@ -1,6 +1,7 @@
 /*
 alert("HI world!!");
 console.log("Im here");
+
 */
 
 const a = 777; /* 상수로 선언 */

@@ -38,4 +38,8 @@ localStorage.setItem("nico", true);
 localStorage.getItem("nico");
 ```
 
+- JS 심플 이벤트 핸들러 예제
+
+[Example](/js3/README.md)
+
 # 바닐라 자바스크립트 02 바닐라JS로 게임만들기
