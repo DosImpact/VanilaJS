@@ -113,7 +113,7 @@ init();
 ## 4. CLASS 여러개중 일부만 추가 삭제 하기.
 
 ```c++
-element.classList.[container | add | remove]
+element.classList.[contains | add | remove]
 ```
 
 ```javascript

@@ -1,6 +1,6 @@
 //getElemnetId등도 있지만, querySelector기능을 자주 사용할거임;
 const clockContainer = document.querySelector(".js-clock"),
-  clockTitle = document.querySelector("h1");
+  clockTitle = document.querySelector(".js-clock__title");
 
 function getTime() {
   const date = new Date();

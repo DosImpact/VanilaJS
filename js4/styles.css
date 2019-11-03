@@ -1,5 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
+@import "reset.css";
+@import "weather.css";
+
+button {
+  background-color: unset; /*background-color: unset;*/
+  width: 35px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  margin-right: 8px;
+  border: 2px solid white;
+  transition: all 0.5s ease-in-out;
+}
+button:hover {
+  background-color: whitesmoke;
+  color: black;
+}
 body {
-  background-color: gainsboro;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #2c3e50;
+  font-weight: 700;
+  width: 100%;
+  height: 800px;
+  color: whitesmoke;
 }
 .form,
 .greetings {
@@ -7,4 +33,69 @@ body {
 }
 .showing {
   display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 1s linear;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.clock {
+  font-size: 100px;
+  border-bottom: 4px solid whitesmoke;
+  width: 800px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock .js-clock__title {
+}
+
+.greetingform {
+  margin: 20px;
+  font-size: 50px;
+  font-weight: 400;
+}
+.toDoList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.toDoList .toDoList__form {
+  margin: 15px;
+  padding: 10px 20px;
+}
+.toDoList .toDoList__form .js-toDoForm > input {
+  height: 30px;
+  padding: 0 30px;
+  background: none;
+  border: 3px solid whitesmoke;
+  color: white;
+}
+.toDoList .js-toDoList > li {
+  margin: 9px;
+  font-weight: 600;
 }

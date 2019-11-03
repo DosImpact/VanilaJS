@@ -13,7 +13,6 @@ function handleSubmit(event) {
   //백단으로 데이터가 넘어가는데, 그러한 새로고침 이벤트(기본값)을 막고자 한다.
   event.preventDefault();
   const currentValue = input.value;
-  console.log(currentValue);
   paintGreeting(currentValue);
   saveName(currentValue);
 }
@@ -24,7 +23,7 @@ function askForName() {
 function paintGreeting(text) {
   form.classList.remove(SHOWING_CN);
   greeting.classList.add(SHOWING_CN);
-  greeting.innerText = `Hello ${text}`;
+  greeting.innerText = `Hello ! ${text}`;
 }
 function loadName() {
   const currentUser = localStorage.getItem(USER_LS);
