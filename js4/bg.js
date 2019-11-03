@@ -1,6 +1,13 @@
 const body = document.querySelector("body");
+const container = document.querySelector(".changeBG");
 
 const IMG_NUMBER = 8;
+
+function BackgroundChange() {
+  const img = document.querySelector("img");
+  const imageNumber = Math.floor(Math.random() * IMG_NUMBER);
+  img.src = `images/${imageNumber + 1}.jpg`;
+}
 
 //이미지 API에서 불러온다면, 이 기능이 필요할거다.
 function handleImgLoad() {
@@ -21,5 +28,6 @@ function genRandom() {
 function init() {
   const randomNumber = genRandom();
   paintImage(randomNumber);
+  container.addEventListener("click", BackgroundChange);
 }
 init();
