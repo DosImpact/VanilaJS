@@ -1,0 +1,21 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#canvas_mask {
+}
+
+body {
+  position: relative;
+}
+.container {
+  display: flex;
+  position: relative;
+}
+.canvas_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -20;
+}
