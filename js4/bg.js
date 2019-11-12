@@ -5,7 +5,7 @@ const IMG_NUMBER = 8;
 
 function BackgroundChange() {
   const img = document.querySelector("img");
-  const imageNumber = Math.floor(Math.random() * IMG_NUMBER);
+  const imageNumber = genRandom();
   img.src = `images/${imageNumber + 1}.jpg`;
 }
 

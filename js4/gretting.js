@@ -1,3 +1,17 @@
+/*
+-로컬스토리지는 string을 저장 불러오기가 가능하다.!
+localStorage.setItem(USER_LS, text)
+localStoruage.getItem(USER_LS)
+-form에서 submit 세로고침 막기
+form.addEventListener("submit",handleSubmit)
+event.preventDefault();
+
+-css .showing{display:black}은
+cascading되므로 class추가 순서에 상관없이. 보이게 된다.
+즉, 기본적으로 form이랑, greetings를 안보이게 하고,
+showing을 추가한 경우만 보이게 한다.
+*/
+
 const form = document.querySelector(".js-form"),
   input = document.querySelector("input"),
   greeting = document.querySelector(".js-greetings");
