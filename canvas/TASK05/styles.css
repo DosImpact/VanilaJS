@@ -1,0 +1,20 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.main__container .container {
+  display: flex;
+  position: relative;
+}
+.main__container .canvas_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -20;
+  display: none;
+}
+.main__container .showing {
+  display: block;
+}

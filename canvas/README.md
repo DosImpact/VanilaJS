@@ -20,7 +20,11 @@
 3. canvas img to mask 변환
 
 - rgb -> rgba로 저장하기. 애초에 img는 병풍이라 그럴 필요 없다.
-- 해결
+- 3.1 해결
+- cv 들어갈때 input1 원본 이미지(optional) | input2 마스크가 덮어진 이미지 | input3 only 마스크
+- 일딴 opencv에서만 처리를 해보자. 원본이지미는 필요없는데 input2 와 inpu3를 js가 해결해 줘야함.
+- 3.2
+-
 
 ```js
 function canvasMakeMask() {
