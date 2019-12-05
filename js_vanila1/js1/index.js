@@ -23,7 +23,10 @@ const nicoInfo = {
   gender: "Male",
   isHandsome: true,
   favMovies: ["Oldboy", "SilverTown"],
-  favFood: [{ name: "Kimchi", fatty: false }, { name: "Lynn", fatty: false }]
+  favFood: [
+    { name: "Kimchi", fatty: false },
+    { name: "Lynn", fatty: false }
+  ]
 };
 console.log(nicoInfo);
 // const nicoInfo : nicoInfo자체를 바꿀수는없지만, 변수값은 변경가능.

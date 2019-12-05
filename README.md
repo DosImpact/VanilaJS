@@ -30,6 +30,54 @@
 
 [DOM MDN](https://developer.mozilla.org/en-US/docs/Web/Events)
 
+# 변수
+
+```js
+alert("HI world!!");
+console.log("Im here");
+```
+
+```js
+const a = 777; /* 상수로 선언 */
+let b = a - 111; /*변수로 선언 */
+var c = a + b; // var은 쓰지 말것, 이제는 let아니면 const로 써
+console.log(b);
+```
+
+```js
+//string,bool,array
+const what = "Nicolas";
+const watt = true;
+const watf = false;
+const dayOfWeek = ["Mon", "Tue", "Wed", true, 1, 20.3]; // 낙타등 명명 규칙 - 띄어쓰기 대신에 대문자를 써준다.
+console.log(dayOfWeek);
+```
+
+```js
+//make object
+const nicoInfo = {
+  name: "Nico",
+  age: 33,
+  gender: "Male",
+  isHandsome: true,
+  favMovies: ["Oldboy", "SilverTown"],
+  favFood: [
+    { name: "Kimchi", fatty: false },
+    { name: "Lynn", fatty: false }
+  ]
+};
+console.log(nicoInfo);
+// const nicoInfo : nicoInfo자체를 바꿀수는없지만, 변수값은 변경가능.
+```
+
+# 함수
+
+```js
+function sayhello2(arg1, arg2) {
+  console.log(`${arg1} say to ${arg2}`); // ``을 쓰고 안의 변수는 ${} 을 이용해서 나타낸다.
+}
+```
+
 - JS 심플 이벤트 핸들러 예제
 
 [Example](/js3/README.md)
