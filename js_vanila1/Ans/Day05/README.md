@@ -9,7 +9,10 @@ GMT는 또한 UTC라고도 불리는데, 두 용어가 혼용되어서 사용되
 
 ```
 ```
-일반적으로 이런 데이터는 UTC를 기준으로 한 유닉스 시간이나 오프셋 정보가 포함된 ISO-8601와 같은 형태로 전송하게 된다. 위의 예시에서 서울의 2017년 3월 10일 오후 9시 30분은 유닉스 시간을 이용한다면 숫자 타입의 1489113000 이 될 것이고, ISO-8601을 이용한다면 문자열 타입의 2017-03-10T11:30:00+09:00 가 될 것이다.
+일반적으로 이런 데이터는 UTC를 기준으로 한 유닉스 시간이나 오프셋 정보가 포함된 ISO-8601와 같은 형태로 전송하게 된다. 
+위의 예시에서 서울의 2017년 3월 10일 오후 9시 30분은 
+유닉스 시간을 이용한다면 숫자 타입의 1489113000 이 될 것이고, 
+ISO-8601을 이용한다면 문자열 타입의 2017-03-10T11:30:00+09:00 가 될 것이다.
 ```
 
 ```
@@ -23,3 +26,124 @@ var seoul = new Date(1489199400000);
 seoul.getTimeZoneOffset(); // -540
 반환값 -540 은 타임존이 540분 앞서 있다는 의미이다. 서울의 오프셋이 +09:00 이란 걸 생각해보면 부호가 반대로 되어 있는 걸 알 수 있는데, 왜 그런지 모르겠지만 암튼 주의해야 한다. 이 방식을 기준으로 뉴욕의 오프셋 -05:00 을 계산해 보면 60 * 5 = 300 이 될 것이다. 이 840 만큼의 차이를 밀리초로 단위로 보정해서 새로운 Date 객체를 만들면, 그 객체의 getXX 메소드들을 이용해서 원하는 형태의 데이터를 만들어낼 수 있을 것이다. 간단한 포매터 함수를 만들어 결과를 비교해 보자.
 ```
+
+```
+UTC(Coordinated Universal Time): 세계 협정시
+
+GMT(Greenwich Mean Time): 그리니치 평균시 
+```
+```
+UTC 형식 : 1981-02-22T09:00Z (UTC 시간대일 경우 Z가 붙는다)
+
+1981-02-22T09:00:00+09:00 (UTC 시간대가 아닐 경우 ±hh:mm, ±hhmm, ±hh을 붙인다)
+
+JavaScript에서Date 생성시 반환값 (기본 GMT형식 / UTC로 변환/ Locale 적용 formmat)
+```
+```
+
+console.log('TimeZone:', new Date().getTimezoneOffset())
+->TimeZone Offset: -540 (한국 시간에서 9시간을 빼면 UTC Time)
+```
+
+```
+var date = new Date(); //UTC 기준 현재시간을 생성함
+
+console.log(date);  // 하지만 출력할때는 KST (로컬화) 되어서 출력 by TimeZoone Offset
+
+-> Thu Oct 20 2016 15:06:08 GMT+0900 (KST)
+
+console.log(date.toISOString()); //toISOString 을 통해 ISO1806 UTC 출력
+
+-> 2016-10-20T06:15:26.812Z
+
+console.log(date.toLocaleString()); // 로컬화 해서 출력
+
+-> 2016. 10. 20. 오후 3:15:26
+```
+
+```
+var d = new Date('2016-10-22T15:00:00.000Z'); //UTC기준 10월 22일 15시는 KST 으로 10월 23일 0시
+
+console.log(d);
+
+->Sun Oct 23 2016 00:00:00 GMT+0900 (KST)
+
+console.log(d.toISOString());
+
+->2016-10-22T15:00:00.000Z
+
+console.log(d.toLocaleString());
+
+->2016. 10. 23. 오전 12:00:00 //여기서 오전 12는 = 밤 12시 = 새벽 0시 = > 1시간이 지나면 => 오전 1시가 됨...
+```
+
+```
+var d2 = new Date('2016-10-22T15:00:00+09:00'); //KST 기준으로 적은것
+
+console.log(d2);
+
+->Sat Oct 22 2016 15:00:00 GMT+0900 (KST)
+
+console.log(d2.toISOString());
+
+->2016-10-22T06:00:00.000Z
+
+console.log(d2.toLocaleString());
+
+->2016. 10. 22. 오후 3:00:00
+```
+
+```
+var d3 = new Date('2016-10-22T15:00:00'); //UTC기준..
+
+console.log(d3);
+
+->Sun Oct 23 2016 00:00:00 GMT+0900 (KST)
+
+console.log(d3.toISOString());
+
+->2016-10-22T15:00:00.000Z
+
+console.log(d3.toLocaleString());
+
+->2016. 10. 23. 오전 12:00:00;
+```
+
+```
+var d4 = new Date('2016-10-22 15:00:00'); // 이건 뭐지... Date에 T를 빠뜨려놓고
+
+console.log(d4);
+
+->Sat Oct 22 2016 15:00:00 GMT+0900 (KST)
+
+console.log(d4.toISOString());
+
+->2016-10-22T06:00:00.000Z
+
+console.log(d4.toLocaleString());
+
+->2016. 10. 22. 오후 3:00:00
+```
+
+
+결론. Javascritp에서 Date 객체를 인자를 주지 않고 생성할 경우 
+
+new Date() = 컴퓨터에서 사용하는 Time Zone으로 인식, 현지시간을 반환 
+
+
+
+시간 문자열 인자를 넘겨줄 경우
+
+1) UTC 포멧의 UTC 시간 => UTC Time Zone으로 인식
+
+2) UTC 포멧의 다른 Time Zone 시간 => 입력된 Time Zone으로 인식
+
+3) UTC 포멧의  Time Zone표시가 없는 시간 => UTC Time Zone으로  인식
+
+4) UTC 포멧이 아닌 시간 문자열 => 컴퓨터에서 사용하는 Time Zone으로 인식
+
+=> 1,2,3,4번 에서 인식된 Time Zone으로 현지시간을 계산하여 반환 
+
+
+
+출처: https://5hyel.tistory.com/12 [HYEL & TSAR]
