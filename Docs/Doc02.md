@@ -1,9 +1,9 @@
 # 이벤트리스너 | 클래스 리스트
 
 - classList.contains | remove | add
-- addEventListener
-
-[참고](https://developer.mozilla.org/en-US/docs/Web/API/Element)
+- Element.addEventListener | mouseenter | click | submit
+- window.addEventListener | resize
+  [참고](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 
 ```js
 const title = document.querySelector("#title");

@@ -1,0 +1,12 @@
+.js-greeting,
+.js-greeting__name {
+  display: none;
+}
+.js-greeting__name {
+  background-color: aquamarine;
+  font-size: 24px;
+  color: brown;
+}
+.showing {
+  display: block;
+}
