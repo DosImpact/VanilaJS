@@ -2,7 +2,7 @@
 
 - localStorage. setItem | getItem
 - classList. remove | add | contains
-- event.precentDefault()
+- event.preventDefault()
 
 ```js
 const form = document.querySelector(".js-greeting");

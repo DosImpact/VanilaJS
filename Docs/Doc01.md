@@ -81,7 +81,7 @@ console.log(result);
 const title = document.getElementById("title");
 console.log(title.innerText);
 
-//title에 대한 어트리뷰트를 출력해준다.
+//title에 대한 어트리뷰트를 출력해준다.★★★★★
 console.dir(title);
 
 title.style.color = "red";
