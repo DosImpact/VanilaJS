@@ -52,6 +52,4 @@ function init() {
   setClocks();
   setInterval(setClocks, 1000); // args : Handler | ms
 }
-
-init();
 ```
