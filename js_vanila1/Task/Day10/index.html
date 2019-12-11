@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task Day 10</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <h1>Random Number Game</h1>
+    <h2 id="myRangeDisplay">Generate a number between 0 and 50</h2>
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      class="slider"
+      id="myRange"
+    />
+    <div>
+      <span class="js-inputRange">Guess the <b>number</b></span>
+      <form class="js-inputRangeButton" action="">
+        <input class="js-inputRangeInput" type="text" />
+        <button>play<b>!!!!</b></button>
+      </form>
+    </div>
+    <span class="js-result"></span>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
