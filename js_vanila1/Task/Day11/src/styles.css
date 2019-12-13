@@ -1,0 +1,39 @@
+.cal {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  width: 700px;
+  height: 400px;
+  padding: 20px;
+}
+.display {
+  height: 60px;
+  width: 450px;
+  color: #f4f5f5;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+}
+.button {
+  height: 60px;
+  width: 150px;
+  color: #f4f5f5;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  opacity: 0.7;
+}
+.clear {
+  background-color: #a7aab1;
+}
+.operator {
+  background-color: #fe8e00;
+}
+.number {
+  background-color: #363439;
+}
