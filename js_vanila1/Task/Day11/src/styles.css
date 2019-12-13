@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 .cal {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   background-color: black;
   width: 700px;
   height: 400px;
@@ -22,7 +26,8 @@
   border-radius: 10px;
   font-size: 20px;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
+  padding-top: 10px;
   transition: all 0.2s ease-in-out;
 }
 .button:hover {
@@ -36,4 +41,22 @@
 }
 .number {
   background-color: #363439;
+}
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.left__btn {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.right__btn {
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#button__0 {
+  width: 310px;
 }
