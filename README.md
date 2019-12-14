@@ -1,4 +1,4 @@
-[모멤텀 by Kim Do Young](https://dosimpact.github.io/VanilaJS/js4/index.html)
+[모멤텀 by Kim Do Young](https://dosimpact.github.io/VanilaJS/js_vanila1/js4/index.html)
 
 # 바닐라 자바스크립트 01 크롬 익스텐션의 모멘텀 클론 코딩
 
