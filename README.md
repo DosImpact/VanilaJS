@@ -1,4 +1,5 @@
 [모멤텀 by Kim Do Young](https://dosimpact.github.io/VanilaJS/js_vanila1/js4/index.html)
+[JS 그림판 by Kim Do Young](https://dosimpact.github.io/VanilaJS/js_vanila2/lecture/index.html)
 
 # 바닐라 자바스크립트 01 크롬 익스텐션의 모멘텀 클론 코딩
 
@@ -93,3 +94,76 @@ const coordsObj = {
    이게 js가 강력한 이유 !! 메일 함도 새로고침 없이 리프레쉬 된 것을 볼 수 있다.!!
 
 # 바닐라 자바스크립트 02 바닐라JS로 게임만들기
+
+```js
+//HTMl의 canvas의 요소를 가져옵니다.
+const canvas = document.getElementById("jsCanvas");
+
+//canvas는 너비 높이가 있어야 작동!
+canvas.width = CANVAS_SIZE;
+canvas.height = CANVAS_SIZE;
+
+//getContext라는 픽셀정보들을 가져오는 함수, 3d도 있겠지..
+const ctx = canvas.getContext("2d");
+
+//처음에 canvas는 빈 = alpha값이 0인상태이다. -> 흰색으로 칠해주자.
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+//색상설정
+ctx.strokeStyle = DEFAULT_COLOR;
+ctx.fillStyle = DEFAULT_COLOR;
+ctx.lineWidth = 2.5;
+
+//마우스를 누르면 색칠되는 점들로 그리고, 마우스를 안누르면 색칠이 안되는 점들로 그린다.
+function onMouseMove(event) {
+  const x = event.offsetX;
+  const y = event.offsetY;
+  if (!painting) {
+    ctx.beginPath(); //새로운 시작점그림
+    ctx.moveTo(x, y); //다음 점을 그리는데, 점과 점은 색상을 칠하지 않는다.
+  } else if (painting && !filling) {
+    ctx.lineTo(x, y); //다음 점을 그린다, 이때 점과 점은 색상을 칠한다.
+    ctx.stroke(); // 칠하기.
+  }
+}
+```
+
+- canvas 이미지 저장하기, toDataURL로 href로 넣어주고, download이름 정하고, click으로 시행!
+
+```js
+function handleSaveClick(event) {
+  const a = document.createElement("a");
+  a.href = canvas.toDataURL();
+  a.download = "Paint";
+  a.click();
+}
+```
+
+- 우클릭 방지하기 contextmenu이벤트 -> event.preventdefault
+
+```js
+canvas.addEventListener("contextmenu", handleCM);
+
+function handleCM(event) {
+  event.preventDefault();
+}
+```
+
+- 배열 순회해서 이벤트리스너 넣기
+
+```js
+Array.from(colors).forEach(e => {
+  e.addEventListener("click", handleColorClick);
+});
+```
+
+- range 가져와서 굵기조정하기
+
+```js
+range.addEventListener("input", handleInputRange);
+
+function handleInputRange(event) {
+  //console.log(typeof event.target.value);
+  ctx.lineWidth = parseInt(event.target.value);
+}
+```
