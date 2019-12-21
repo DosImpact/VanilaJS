@@ -168,3 +168,7 @@ function handleInputRange(event) {
   ctx.lineWidth = parseInt(event.target.value);
 }
 ```
+
+# CSS 우선순위
+
+- 반드시 cascading의 원리를 따르는것이 아니다.

@@ -1,0 +1,9 @@
+.profile .profile__form {
+  display: none;
+}
+.profile .profile__title {
+  display: none;
+}
+.profile .showing {
+  display: block;
+}
